@@ -43,6 +43,9 @@
                                     <integer key="value" value="20"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="playAction:" destination="-1" eventType="touchUpInside" id="jqx-pS-EDK"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b89-7Q-Fo6">
                             <rect key="frame" x="0.0" y="430" width="267" height="40"/>
@@ -60,6 +63,9 @@
                                     <integer key="value" value="20"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="settingsAction:" destination="-1" eventType="touchUpInside" id="Bff-Hj-K6Z"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>

@@ -12,6 +12,14 @@
 		FF30F67528E729770099317C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF30F67428E729770099317C /* Assets.xcassets */; };
 		FF30F68828E72AD40099317C /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF30F68628E72AD40099317C /* StartVC.swift */; };
 		FF30F68928E72AD40099317C /* StartVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF30F68728E72AD40099317C /* StartVC.xib */; };
+		FF30F68D28E7347E0099317C /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF30F68B28E7347E0099317C /* SettingsVC.swift */; };
+		FF30F68E28E7347E0099317C /* SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF30F68C28E7347E0099317C /* SettingsVC.xib */; };
+		FF30F69028E7370F0099317C /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF30F68F28E7370F0099317C /* UserDefaultsManager.swift */; };
+		FF30F69228E73C2E0099317C /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF30F69128E73C2E0099317C /* SettingsViewModel.swift */; };
+		FF30F69628E73F8E0099317C /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF30F69428E73F8E0099317C /* SettingsCell.swift */; };
+		FF30F69728E73F8E0099317C /* SettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF30F69528E73F8E0099317C /* SettingsCell.xib */; };
+		FF30F69928E745D70099317C /* SettingsParametr.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF30F69828E745D70099317C /* SettingsParametr.swift */; };
+		FF30F69C28E74A7A0099317C /* ShowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF30F69B28E74A7A0099317C /* ShowError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +30,14 @@
 		FF30F67928E729770099317C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF30F68628E72AD40099317C /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		FF30F68728E72AD40099317C /* StartVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartVC.xib; sourceTree = "<group>"; };
+		FF30F68B28E7347E0099317C /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		FF30F68C28E7347E0099317C /* SettingsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsVC.xib; sourceTree = "<group>"; };
+		FF30F68F28E7370F0099317C /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		FF30F69128E73C2E0099317C /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		FF30F69428E73F8E0099317C /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		FF30F69528E73F8E0099317C /* SettingsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsCell.xib; sourceTree = "<group>"; };
+		FF30F69828E745D70099317C /* SettingsParametr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsParametr.swift; sourceTree = "<group>"; };
+		FF30F69B28E74A7A0099317C /* ShowError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +101,8 @@
 		FF30F68128E729E30099317C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FF30F69A28E74A650099317C /* Extension */,
+				FF30F68A28E7345F0099317C /* SettingsVC */,
 				FF30F68528E72ABA0099317C /* StartVC */,
 			);
 			path = Controller;
@@ -93,6 +111,7 @@
 		FF30F68228E72A4F0099317C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FF30F69328E73F530099317C /* SettingsCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -100,6 +119,7 @@
 		FF30F68328E72A550099317C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FF30F69828E745D70099317C /* SettingsParametr.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -107,6 +127,7 @@
 		FF30F68428E72A5C0099317C /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				FF30F68F28E7370F0099317C /* UserDefaultsManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -118,6 +139,33 @@
 				FF30F68728E72AD40099317C /* StartVC.xib */,
 			);
 			path = StartVC;
+			sourceTree = "<group>";
+		};
+		FF30F68A28E7345F0099317C /* SettingsVC */ = {
+			isa = PBXGroup;
+			children = (
+				FF30F68B28E7347E0099317C /* SettingsVC.swift */,
+				FF30F68C28E7347E0099317C /* SettingsVC.xib */,
+				FF30F69128E73C2E0099317C /* SettingsViewModel.swift */,
+			);
+			path = SettingsVC;
+			sourceTree = "<group>";
+		};
+		FF30F69328E73F530099317C /* SettingsCell */ = {
+			isa = PBXGroup;
+			children = (
+				FF30F69428E73F8E0099317C /* SettingsCell.swift */,
+				FF30F69528E73F8E0099317C /* SettingsCell.xib */,
+			);
+			path = SettingsCell;
+			sourceTree = "<group>";
+		};
+		FF30F69A28E74A650099317C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FF30F69B28E74A7A0099317C /* ShowError.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,7 +226,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF30F68E28E7347E0099317C /* SettingsVC.xib in Resources */,
 				FF30F67528E729770099317C /* Assets.xcassets in Resources */,
+				FF30F69728E73F8E0099317C /* SettingsCell.xib in Resources */,
 				FF30F68928E72AD40099317C /* StartVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,9 +240,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF30F69628E73F8E0099317C /* SettingsCell.swift in Sources */,
 				FF30F66C28E7296E0099317C /* AppDelegate.swift in Sources */,
+				FF30F69028E7370F0099317C /* UserDefaultsManager.swift in Sources */,
+				FF30F68D28E7347E0099317C /* SettingsVC.swift in Sources */,
+				FF30F69C28E74A7A0099317C /* ShowError.swift in Sources */,
 				FF30F66E28E7296E0099317C /* SceneDelegate.swift in Sources */,
 				FF30F68828E72AD40099317C /* StartVC.swift in Sources */,
+				FF30F69928E745D70099317C /* SettingsParametr.swift in Sources */,
+				FF30F69228E73C2E0099317C /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +381,6 @@
 				INFOPLIST_FILE = FindYourPath/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -353,7 +408,6 @@
 				INFOPLIST_FILE = FindYourPath/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

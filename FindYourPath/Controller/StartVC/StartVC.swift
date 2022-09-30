@@ -13,4 +13,13 @@ class StartVC: UIViewController {
         super.viewDidLoad()
     }
 
+    @IBAction func playAction(_ sender: Any) {
+    }
+    
+    @IBAction func settingsAction(_ sender: Any) {
+        let settingsViewModel = SettingsViewModel()
+        let settingsVC = SettingsVC(model: settingsViewModel)
+        navigationController?.show(settingsVC, sender: nil)
+    }
+    
 }
