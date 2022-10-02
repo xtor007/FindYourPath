@@ -13,6 +13,19 @@ enum Direction {
     
     static let allDirections = [Direction.right, .down, .left, .up]
     
+    func getIndex() -> Int {
+        switch self {
+        case .right:
+            return 0
+        case .down:
+            return 1
+        case .left:
+            return 2
+        case .up:
+            return 3
+        }
+    }
+    
 }
 
 class GameView: UIView {

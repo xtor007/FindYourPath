@@ -42,7 +42,7 @@
                     <buttonConfiguration key="configuration" style="plain" title="Up"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="20"/>
+                            <integer key="value" value="16"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
@@ -61,7 +61,7 @@
                     <buttonConfiguration key="configuration" style="plain" title="Right"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="20"/>
+                            <integer key="value" value="16"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
@@ -80,7 +80,7 @@
                     <buttonConfiguration key="configuration" style="plain" title="Left"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="20"/>
+                            <integer key="value" value="16"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
@@ -99,7 +99,7 @@
                     <buttonConfiguration key="configuration" style="plain" title="Down"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="20"/>
+                            <integer key="value" value="16"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>

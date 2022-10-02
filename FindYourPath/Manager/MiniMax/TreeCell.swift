@@ -54,7 +54,7 @@ class TreeCell {
     
     func go() {
         if position.isPlayerKilled() {
-            power = 0
+            power = -1
             return
         }
         if position.playerCoordinates == labyrinth.finishCoordinates {
@@ -71,7 +71,7 @@ class TreeCell {
         }
         switch type {
         case .max:
-            var maxValue = 0.0
+            var maxValue = -1.0
             for child in children {
                 if child.power > maxValue {
                     maxValue = child.power
@@ -97,7 +97,12 @@ class TreeCell {
     }
     
     private func calculatePower() -> Double {
-        return 1 - 1/position.playerCoordinates.distanceTo(labyrinth.finishCoordinates)
+        var avarageDistanceToKill = 0.0
+        for killerCoordinates in position.cleverKillerCoordinates {
+            avarageDistanceToKill += 1/position.playerCoordinates.distanceTo(killerCoordinates)
+        }
+        avarageDistanceToKill /= Double(position.cleverKillerCoordinates.count)
+        return 1/position.playerCoordinates.distanceTo(labyrinth.finishCoordinates) - avarageDistanceToKill
     }
     
     private func findChildren() {

@@ -27,7 +27,7 @@ class GameVC: UIViewController {
             cleverKillerCoordinates: model.characterPosition.cleverKillerCoordinates,
             stupidKillerCoordinates: model.characterPosition.stupidKillerCoordinates
         )
-        print(model.getReccomendedMove())
+        recomendMove()
     }
     
     init(model: GameViewModel) {
@@ -40,6 +40,37 @@ class GameVC: UIViewController {
     }
     
     @IBAction func moveAction(_ sender: Any) {
+        if let button = sender as? UIButton {
+            let direction = Direction.allDirections[button.tag]
+            if model.isMovePossible(direction: direction) {
+                for moveButton in moveButtons {
+                    moveButton.backgroundColor = .systemCyan
+                }
+                model.movePlayer(direction: direction)
+                gameView.movePlayer(direction)
+                switch model.gameStatus {
+                case .win:
+                    print("WIN")
+                case .lose:
+                    print("LOSE")
+                case .game:
+                    let (cleverKillerMoves, stupidKillerMoves) = model.getBotMoves()
+                    gameView.moveKillers(cleverDirections: cleverKillerMoves, stupidDirections: stupidKillerMoves)
+                    if model.gameStatus == .lose {
+                        print("LOSE")
+                    } else {
+                        recomendMove()
+                    }
+                }
+            } else {
+                showError(message: "Move isn't possible")
+            }
+        }
+    }
+    
+    private func recomendMove() {
+        let direction = model.getReccomendedMove()
+        moveButtons[direction.getIndex()].backgroundColor = .green
     }
     
 }
