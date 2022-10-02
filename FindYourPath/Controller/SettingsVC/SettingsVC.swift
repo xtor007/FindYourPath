@@ -46,11 +46,10 @@ class SettingsVC: UIViewController {
     
     private func updateDataSource() {
         model.loadData { message in
-            print(message)
+            self.showError(message: message)
         }
         var snapshot = NSDiffableDataSourceSnapshot<Section, SettingsParametr>()
         snapshot.appendSections([.first])
-        print(model.settingsParametrs)
         snapshot.appendItems(model.settingsParametrs)
         dataSource.apply(snapshot, animatingDifferences: true)
     }

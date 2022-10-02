@@ -14,6 +14,9 @@ class StartVC: UIViewController {
     }
 
     @IBAction func playAction(_ sender: Any) {
+        let gameViewModel = GameViewModel()
+        let gameVC = GameVC(model: gameViewModel)
+        navigationController?.show(gameVC, sender: nil)
     }
     
     @IBAction func settingsAction(_ sender: Any) {

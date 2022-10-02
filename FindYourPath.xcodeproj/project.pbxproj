@@ -20,6 +20,16 @@
 		FF30F69728E73F8E0099317C /* SettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF30F69528E73F8E0099317C /* SettingsCell.xib */; };
 		FF30F69928E745D70099317C /* SettingsParametr.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF30F69828E745D70099317C /* SettingsParametr.swift */; };
 		FF30F69C28E74A7A0099317C /* ShowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF30F69B28E74A7A0099317C /* ShowError.swift */; };
+		FFFB786028E96DBD00A0649C /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB785E28E96DBC00A0649C /* GameVC.swift */; };
+		FFFB786128E96DBD00A0649C /* GameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFB785F28E96DBC00A0649C /* GameVC.xib */; };
+		FFFB786328E96DDF00A0649C /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB786228E96DDF00A0649C /* GameViewModel.swift */; };
+		FFFB786628E9729E00A0649C /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB786528E9729E00A0649C /* GameView.swift */; };
+		FFFB786928E974FA00A0649C /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB786828E974FA00A0649C /* Square.swift */; };
+		FFFB786B28E9752900A0649C /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB786A28E9752900A0649C /* Coordinates.swift */; };
+		FFFB786D28E9766200A0649C /* Labyrinth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB786C28E9766200A0649C /* Labyrinth.swift */; };
+		FFFB786F28E9802000A0649C /* LabyrinthTask.txt in Resources */ = {isa = PBXBuildFile; fileRef = FFFB786E28E9802000A0649C /* LabyrinthTask.txt */; };
+		FFFB787128E980EA00A0649C /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB787028E980EA00A0649C /* FileManager.swift */; };
+		FFFB787328E995D500A0649C /* CharacterPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB787228E995D500A0649C /* CharacterPosition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +48,16 @@
 		FF30F69528E73F8E0099317C /* SettingsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsCell.xib; sourceTree = "<group>"; };
 		FF30F69828E745D70099317C /* SettingsParametr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsParametr.swift; sourceTree = "<group>"; };
 		FF30F69B28E74A7A0099317C /* ShowError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowError.swift; sourceTree = "<group>"; };
+		FFFB785E28E96DBC00A0649C /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
+		FFFB785F28E96DBC00A0649C /* GameVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameVC.xib; sourceTree = "<group>"; };
+		FFFB786228E96DDF00A0649C /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		FFFB786528E9729E00A0649C /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		FFFB786828E974FA00A0649C /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
+		FFFB786A28E9752900A0649C /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
+		FFFB786C28E9766200A0649C /* Labyrinth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labyrinth.swift; sourceTree = "<group>"; };
+		FFFB786E28E9802000A0649C /* LabyrinthTask.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LabyrinthTask.txt; sourceTree = "<group>"; };
+		FFFB787028E980EA00A0649C /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		FFFB787228E995D500A0649C /* CharacterPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPosition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				FF30F67428E729770099317C /* Assets.xcassets */,
+				FFFB786E28E9802000A0649C /* LabyrinthTask.txt */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -101,6 +122,7 @@
 		FF30F68128E729E30099317C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FFFB785D28E96D2A00A0649C /* GameVC */,
 				FF30F69A28E74A650099317C /* Extension */,
 				FF30F68A28E7345F0099317C /* SettingsVC */,
 				FF30F68528E72ABA0099317C /* StartVC */,
@@ -111,6 +133,7 @@
 		FF30F68228E72A4F0099317C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FFFB786428E9728400A0649C /* GameView */,
 				FF30F69328E73F530099317C /* SettingsCell */,
 			);
 			path = View;
@@ -119,6 +142,7 @@
 		FF30F68328E72A550099317C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FFFB786728E974BC00A0649C /* Labyrinth */,
 				FF30F69828E745D70099317C /* SettingsParametr.swift */,
 			);
 			path = Model;
@@ -128,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				FF30F68F28E7370F0099317C /* UserDefaultsManager.swift */,
+				FFFB787028E980EA00A0649C /* FileManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -166,6 +191,35 @@
 				FF30F69B28E74A7A0099317C /* ShowError.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		FFFB785D28E96D2A00A0649C /* GameVC */ = {
+			isa = PBXGroup;
+			children = (
+				FFFB785E28E96DBC00A0649C /* GameVC.swift */,
+				FFFB785F28E96DBC00A0649C /* GameVC.xib */,
+				FFFB786228E96DDF00A0649C /* GameViewModel.swift */,
+			);
+			path = GameVC;
+			sourceTree = "<group>";
+		};
+		FFFB786428E9728400A0649C /* GameView */ = {
+			isa = PBXGroup;
+			children = (
+				FFFB786528E9729E00A0649C /* GameView.swift */,
+			);
+			path = GameView;
+			sourceTree = "<group>";
+		};
+		FFFB786728E974BC00A0649C /* Labyrinth */ = {
+			isa = PBXGroup;
+			children = (
+				FFFB786828E974FA00A0649C /* Square.swift */,
+				FFFB786A28E9752900A0649C /* Coordinates.swift */,
+				FFFB786C28E9766200A0649C /* Labyrinth.swift */,
+				FFFB787228E995D500A0649C /* CharacterPosition.swift */,
+			);
+			path = Labyrinth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +281,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF30F68E28E7347E0099317C /* SettingsVC.xib in Resources */,
+				FFFB786F28E9802000A0649C /* LabyrinthTask.txt in Resources */,
+				FFFB786128E96DBD00A0649C /* GameVC.xib in Resources */,
 				FF30F67528E729770099317C /* Assets.xcassets in Resources */,
 				FF30F69728E73F8E0099317C /* SettingsCell.xib in Resources */,
 				FF30F68928E72AD40099317C /* StartVC.xib in Resources */,
@@ -241,13 +297,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF30F69628E73F8E0099317C /* SettingsCell.swift in Sources */,
+				FFFB786D28E9766200A0649C /* Labyrinth.swift in Sources */,
 				FF30F66C28E7296E0099317C /* AppDelegate.swift in Sources */,
 				FF30F69028E7370F0099317C /* UserDefaultsManager.swift in Sources */,
+				FFFB786328E96DDF00A0649C /* GameViewModel.swift in Sources */,
 				FF30F68D28E7347E0099317C /* SettingsVC.swift in Sources */,
 				FF30F69C28E74A7A0099317C /* ShowError.swift in Sources */,
+				FFFB787128E980EA00A0649C /* FileManager.swift in Sources */,
 				FF30F66E28E7296E0099317C /* SceneDelegate.swift in Sources */,
+				FFFB787328E995D500A0649C /* CharacterPosition.swift in Sources */,
 				FF30F68828E72AD40099317C /* StartVC.swift in Sources */,
 				FF30F69928E745D70099317C /* SettingsParametr.swift in Sources */,
+				FFFB786B28E9752900A0649C /* Coordinates.swift in Sources */,
+				FFFB786928E974FA00A0649C /* Square.swift in Sources */,
+				FFFB786028E96DBD00A0649C /* GameVC.swift in Sources */,
+				FFFB786628E9729E00A0649C /* GameView.swift in Sources */,
 				FF30F69228E73C2E0099317C /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
