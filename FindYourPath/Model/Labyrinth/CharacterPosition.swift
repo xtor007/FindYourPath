@@ -13,4 +13,12 @@ struct CharacterPosition {
     var cleverKillerCoordinates: [Coordinates]
     var stupidKillerCoordinates: [Coordinates]
     
+    func isPlayerKilled() -> Bool {
+        return cleverKillerCoordinates.contains { coordinates in
+            return coordinates == playerCoordinates
+        } || stupidKillerCoordinates.contains(where: { coordinates in
+            return coordinates == playerCoordinates
+        })
+    }
+    
 }

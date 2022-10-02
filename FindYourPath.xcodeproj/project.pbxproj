@@ -30,6 +30,8 @@
 		FFFB786F28E9802000A0649C /* LabyrinthTask.txt in Resources */ = {isa = PBXBuildFile; fileRef = FFFB786E28E9802000A0649C /* LabyrinthTask.txt */; };
 		FFFB787128E980EA00A0649C /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB787028E980EA00A0649C /* FileManager.swift */; };
 		FFFB787328E995D500A0649C /* CharacterPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB787228E995D500A0649C /* CharacterPosition.swift */; };
+		FFFB787628E9DACB00A0649C /* TreeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB787528E9DACB00A0649C /* TreeCell.swift */; };
+		FFFB787828E9F6C300A0649C /* MiniMaxManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB787728E9F6C300A0649C /* MiniMaxManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		FFFB786E28E9802000A0649C /* LabyrinthTask.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LabyrinthTask.txt; sourceTree = "<group>"; };
 		FFFB787028E980EA00A0649C /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		FFFB787228E995D500A0649C /* CharacterPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterPosition.swift; sourceTree = "<group>"; };
+		FFFB787528E9DACB00A0649C /* TreeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeCell.swift; sourceTree = "<group>"; };
+		FFFB787728E9F6C300A0649C /* MiniMaxManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniMaxManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,7 @@
 		FF30F68428E72A5C0099317C /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				FFFB787428E9DAB400A0649C /* MiniMax */,
 				FF30F68F28E7370F0099317C /* UserDefaultsManager.swift */,
 				FFFB787028E980EA00A0649C /* FileManager.swift */,
 			);
@@ -220,6 +225,15 @@
 				FFFB787228E995D500A0649C /* CharacterPosition.swift */,
 			);
 			path = Labyrinth;
+			sourceTree = "<group>";
+		};
+		FFFB787428E9DAB400A0649C /* MiniMax */ = {
+			isa = PBXGroup;
+			children = (
+				FFFB787528E9DACB00A0649C /* TreeCell.swift */,
+				FFFB787728E9F6C300A0649C /* MiniMaxManager.swift */,
+			);
+			path = MiniMax;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,7 +324,9 @@
 				FF30F69928E745D70099317C /* SettingsParametr.swift in Sources */,
 				FFFB786B28E9752900A0649C /* Coordinates.swift in Sources */,
 				FFFB786928E974FA00A0649C /* Square.swift in Sources */,
+				FFFB787828E9F6C300A0649C /* MiniMaxManager.swift in Sources */,
 				FFFB786028E96DBD00A0649C /* GameVC.swift in Sources */,
+				FFFB787628E9DACB00A0649C /* TreeCell.swift in Sources */,
 				FFFB786628E9729E00A0649C /* GameView.swift in Sources */,
 				FF30F69228E73C2E0099317C /* SettingsViewModel.swift in Sources */,
 			);

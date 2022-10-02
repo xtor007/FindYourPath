@@ -8,7 +8,11 @@
 import UIKit
 
 enum Direction {
+    
     case right, down, left, up
+    
+    static let allDirections = [Direction.right, .down, .left, .up]
+    
 }
 
 class GameView: UIView {

@@ -19,7 +19,7 @@ class GameVC: UIViewController {
         model.createLabyrinth { message in
             self.showError(message: message)
         }
-        gameView.addLabyrinth(labyrith: model.labyrith)
+        gameView.addLabyrinth(labyrith: model.labyrinth)
         model.initPosition { message in
             self.showError(message: message)
         }
@@ -27,6 +27,7 @@ class GameVC: UIViewController {
             cleverKillerCoordinates: model.characterPosition.cleverKillerCoordinates,
             stupidKillerCoordinates: model.characterPosition.stupidKillerCoordinates
         )
+        print(model.getReccomendedMove())
     }
     
     init(model: GameViewModel) {

@@ -9,13 +9,19 @@ import Foundation
 
 class GameViewModel {
     
-    var labyrith: Labyrinth!
+    var labyrinth: Labyrinth!
     var characterPosition: CharacterPosition!
+    var miniMaxManager: MiniMaxManager!
     
     func createLabyrinth(onError: @escaping (String)->(Void)) {
         FileManager.shared.readTask { labyrinthText in
             if let labyrinth = Labyrinth(matrixText: labyrinthText) {
-                self.labyrith = labyrinth
+                self.labyrinth = labyrinth
+                UserDefaultsManager.shared.getValue(forKey: .treeDeep) { maxDeep in
+                    self.miniMaxManager = MiniMaxManager(labyrinth: labyrinth, maxDeep: maxDeep)
+                } onError: { message in
+                    onError(message)
+                }
             } else {
                 onError("Cannot create labyrinth")
             }
@@ -36,7 +42,7 @@ class GameViewModel {
                     stupidKillerCoordinates.append(self.getRandomCoordinates())
                 }
                 self.characterPosition = CharacterPosition(
-                    playerCoordinates: self.labyrith.startCoordinates,
+                    playerCoordinates: self.labyrinth.startCoordinates,
                     cleverKillerCoordinates: cleverKillerCoordinates,
                     stupidKillerCoordinates: stupidKillerCoordinates
                 )
@@ -48,10 +54,14 @@ class GameViewModel {
         }
     }
     
+    func getReccomendedMove() -> Direction {
+        return miniMaxManager.go(withType: .max, currentPosition: characterPosition)[0]
+    }
+    
     private func getRandomCoordinates() -> Coordinates {
-        let index = Int.random(in: 1...labyrith.emptySquaresCount)
+        let index = Int.random(in: 1...labyrinth.emptySquaresCount)
         var currentIndex = 0
-        for line in labyrith.matrix {
+        for line in labyrinth.matrix {
             for square in line {
                 if square.status == nil && square.patency == .empty {
                     currentIndex += 1
