@@ -8,7 +8,20 @@
 import Foundation
 
 enum GameStatus {
+    
     case win, lose, game
+    
+    func getMessage() -> String {
+        switch self {
+        case .win:
+            return "YOU WIN☺️☺️☺️"
+        case .lose:
+            return "YOU LOSE😔😔😔"
+        case .game:
+            return ""
+        }
+    }
+    
 }
 
 class GameViewModel {

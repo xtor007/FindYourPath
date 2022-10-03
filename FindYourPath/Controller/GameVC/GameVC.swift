@@ -50,14 +50,14 @@ class GameVC: UIViewController {
                 gameView.movePlayer(direction)
                 switch model.gameStatus {
                 case .win:
-                    print("WIN")
+                    showGameResult(status: .win)
                 case .lose:
-                    print("LOSE")
+                    showGameResult(status: .lose)
                 case .game:
                     let (cleverKillerMoves, stupidKillerMoves) = model.getBotMoves()
                     gameView.moveKillers(cleverDirections: cleverKillerMoves, stupidDirections: stupidKillerMoves)
                     if model.gameStatus == .lose {
-                        print("LOSE")
+                        showGameResult(status: .lose)
                     } else {
                         recomendMove()
                     }
@@ -73,8 +73,17 @@ class GameVC: UIViewController {
         if model.gameStatus != .lose {
             moveButtons[direction.getIndex()].backgroundColor = .green
         } else {
-            print("LOSE")
+            showGameResult(status: .lose)
         }
+    }
+    
+    private func showGameResult(status: GameStatus) {
+        let alertVC = UIAlertController(title: "Finish", message: status.getMessage(), preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default) { _ in
+            self.navigationController?.popViewController(animated: true)
+        }
+        alertVC.addAction(action)
+        present(alertVC, animated: true)
     }
     
 }
