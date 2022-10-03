@@ -23,6 +23,7 @@ class GameViewModel {
         FileManager.shared.readTask { labyrinthText in
             if let labyrinth = Labyrinth(matrixText: labyrinthText) {
                 self.labyrinth = labyrinth
+                AStarManager.shared.initLabyrinth(self.labyrinth)
                 UserDefaultsManager.shared.getValue(forKey: .treeDeep) { maxDeep in
                     self.miniMaxManager = MiniMaxManager(labyrinth: labyrinth, maxDeep: maxDeep)
                 } onError: { message in

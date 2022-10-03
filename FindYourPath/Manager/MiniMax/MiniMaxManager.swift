@@ -19,7 +19,7 @@ class MiniMaxManager {
     
     func go(withType type: CellType, currentPosition: CharacterPosition) -> [Direction] {
         let root = TreeCell(type: type, labyrinth: labyrinth, position: currentPosition, directionChange: [], deep: maxDeep)
-        root.go()
+        root.go(fatherPower: -1)
         return root.getAnswer()
     }
     

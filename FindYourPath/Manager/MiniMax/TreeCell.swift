@@ -44,6 +44,7 @@ class TreeCell {
     }
     
     func getAnswer() -> [Direction] {
+        print(power)
         for child in children {
             if child.power == power {
                 return child.directionChange
@@ -52,13 +53,13 @@ class TreeCell {
         return []
     }
     
-    func go() {
+    func go(fatherPower: Double) {
         if position.isPlayerKilled() {
-            power = -1
+            power = 0
             return
         }
         if position.playerCoordinates == labyrinth.finishCoordinates {
-            power = 1
+            power = 1.1
             return
         }
         if currentDeep == 0 {
@@ -66,43 +67,42 @@ class TreeCell {
             return
         }
         findChildren()
-        for child in children {
-            child.go()
-        }
         switch type {
         case .max:
-            var maxValue = -1.0
-            for child in children {
-                if child.power > maxValue {
-                    maxValue = child.power
-                }
-            }
-            power = maxValue
+            power = -1
         case .mini:
-            var minValue = 1.0
-            for child in children {
-                if child.power < minValue {
-                    minValue = child.power
-                }
-            }
-            power = minValue
+            power = 1
         case .chance:
-            var power = 0.0
-            let chance = 1/Double(children.count)
-            for child in children {
+            power = 0
+        }
+        for child in children {
+            if power < fatherPower && type == .mini {
+                return
+            }
+            child.go(fatherPower: power)
+            switch type {
+            case .max:
+                if child.power > power {
+                    power = child.power
+                }
+            case .mini:
+                if child.power < power {
+                    power = child.power
+                }
+            case .chance:
+                let chance = 1/Double(children.count)
                 power += child.power*chance
             }
-            self.power = power
         }
     }
     
     private func calculatePower() -> Double {
-        var avarageDistanceToKill = 0.0
-        for killerCoordinates in position.cleverKillerCoordinates {
-            avarageDistanceToKill += 1/position.playerCoordinates.distanceTo(killerCoordinates)
-        }
-        avarageDistanceToKill /= Double(position.cleverKillerCoordinates.count)
-        return 1/position.playerCoordinates.distanceTo(labyrinth.finishCoordinates) - avarageDistanceToKill
+//        var avarageDistanceToKill = 0.0
+//        for killerCoordinates in position.cleverKillerCoordinates {
+//            avarageDistanceToKill += 1/position.playerCoordinates.distanceTo(killerCoordinates)
+//        }
+//        avarageDistanceToKill /= Double(position.cleverKillerCoordinates.count)
+        return 1/Double(AStarManager.shared.getDistance(from: position.playerCoordinates, to: labyrinth.finishCoordinates))
     }
     
     private func findChildren() {

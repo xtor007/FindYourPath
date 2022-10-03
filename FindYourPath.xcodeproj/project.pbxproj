@@ -20,6 +20,10 @@
 		FF30F69728E73F8E0099317C /* SettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF30F69528E73F8E0099317C /* SettingsCell.xib */; };
 		FF30F69928E745D70099317C /* SettingsParametr.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF30F69828E745D70099317C /* SettingsParametr.swift */; };
 		FF30F69C28E74A7A0099317C /* ShowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF30F69B28E74A7A0099317C /* ShowError.swift */; };
+		FFDE724D28EB3262000E9623 /* AStarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE724C28EB3262000E9623 /* AStarManager.swift */; };
+		FFDE725028EB3497000E9623 /* AStarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE724F28EB3497000E9623 /* AStarCell.swift */; };
+		FFDE725228EB368E000E9623 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE725128EB368E000E9623 /* PriorityQueue.swift */; };
+		FFDE725428EB380F000E9623 /* AStarAlgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDE725328EB380F000E9623 /* AStarAlgo.swift */; };
 		FFFB786028E96DBD00A0649C /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB785E28E96DBC00A0649C /* GameVC.swift */; };
 		FFFB786128E96DBD00A0649C /* GameVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFB785F28E96DBC00A0649C /* GameVC.xib */; };
 		FFFB786328E96DDF00A0649C /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFB786228E96DDF00A0649C /* GameViewModel.swift */; };
@@ -50,6 +54,10 @@
 		FF30F69528E73F8E0099317C /* SettingsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsCell.xib; sourceTree = "<group>"; };
 		FF30F69828E745D70099317C /* SettingsParametr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsParametr.swift; sourceTree = "<group>"; };
 		FF30F69B28E74A7A0099317C /* ShowError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowError.swift; sourceTree = "<group>"; };
+		FFDE724C28EB3262000E9623 /* AStarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AStarManager.swift; sourceTree = "<group>"; };
+		FFDE724F28EB3497000E9623 /* AStarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AStarCell.swift; sourceTree = "<group>"; };
+		FFDE725128EB368E000E9623 /* PriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
+		FFDE725328EB380F000E9623 /* AStarAlgo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AStarAlgo.swift; sourceTree = "<group>"; };
 		FFFB785E28E96DBC00A0649C /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
 		FFFB785F28E96DBC00A0649C /* GameVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameVC.xib; sourceTree = "<group>"; };
 		FFFB786228E96DDF00A0649C /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
@@ -146,6 +154,7 @@
 		FF30F68328E72A550099317C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FFDE724E28EB3473000E9623 /* A* */,
 				FFFB786728E974BC00A0649C /* Labyrinth */,
 				FF30F69828E745D70099317C /* SettingsParametr.swift */,
 			);
@@ -155,6 +164,7 @@
 		FF30F68428E72A5C0099317C /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				FFDE724B28EB3248000E9623 /* A* */,
 				FFFB787428E9DAB400A0649C /* MiniMax */,
 				FF30F68F28E7370F0099317C /* UserDefaultsManager.swift */,
 				FFFB787028E980EA00A0649C /* FileManager.swift */,
@@ -196,6 +206,24 @@
 				FF30F69B28E74A7A0099317C /* ShowError.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		FFDE724B28EB3248000E9623 /* A* */ = {
+			isa = PBXGroup;
+			children = (
+				FFDE724C28EB3262000E9623 /* AStarManager.swift */,
+				FFDE725128EB368E000E9623 /* PriorityQueue.swift */,
+				FFDE725328EB380F000E9623 /* AStarAlgo.swift */,
+			);
+			path = "A*";
+			sourceTree = "<group>";
+		};
+		FFDE724E28EB3473000E9623 /* A* */ = {
+			isa = PBXGroup;
+			children = (
+				FFDE724F28EB3497000E9623 /* AStarCell.swift */,
+			);
+			path = "A*";
 			sourceTree = "<group>";
 		};
 		FFFB785D28E96D2A00A0649C /* GameVC */ = {
@@ -310,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFDE725428EB380F000E9623 /* AStarAlgo.swift in Sources */,
 				FF30F69628E73F8E0099317C /* SettingsCell.swift in Sources */,
 				FFFB786D28E9766200A0649C /* Labyrinth.swift in Sources */,
 				FF30F66C28E7296E0099317C /* AppDelegate.swift in Sources */,
@@ -321,14 +350,17 @@
 				FF30F66E28E7296E0099317C /* SceneDelegate.swift in Sources */,
 				FFFB787328E995D500A0649C /* CharacterPosition.swift in Sources */,
 				FF30F68828E72AD40099317C /* StartVC.swift in Sources */,
+				FFDE725028EB3497000E9623 /* AStarCell.swift in Sources */,
 				FF30F69928E745D70099317C /* SettingsParametr.swift in Sources */,
 				FFFB786B28E9752900A0649C /* Coordinates.swift in Sources */,
 				FFFB786928E974FA00A0649C /* Square.swift in Sources */,
 				FFFB787828E9F6C300A0649C /* MiniMaxManager.swift in Sources */,
 				FFFB786028E96DBD00A0649C /* GameVC.swift in Sources */,
+				FFDE725228EB368E000E9623 /* PriorityQueue.swift in Sources */,
 				FFFB787628E9DACB00A0649C /* TreeCell.swift in Sources */,
 				FFFB786628E9729E00A0649C /* GameView.swift in Sources */,
 				FF30F69228E73C2E0099317C /* SettingsViewModel.swift in Sources */,
+				FFDE724D28EB3262000E9623 /* AStarManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
