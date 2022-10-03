@@ -31,20 +31,21 @@ class TreeCell {
     let position: CharacterPosition
     let directionChange: [Direction]
     let currentDeep: Int
+    let rootType: CellType
     
     var children = [TreeCell]()
     var power = 0.0
     
-    init(type: CellType, labyrinth: Labyrinth, position: CharacterPosition, directionChange: [Direction], deep: Int) {
+    init(type: CellType, labyrinth: Labyrinth, position: CharacterPosition, directionChange: [Direction], deep: Int, rootType: CellType) {
         self.type = type
         self.labyrinth = labyrinth
         self.position = position
         self.directionChange = directionChange
         self.currentDeep = deep
+        self.rootType = rootType
     }
     
     func getAnswer() -> [Direction] {
-        print(power)
         for child in children {
             if child.power == power {
                 return child.directionChange
@@ -55,7 +56,7 @@ class TreeCell {
     
     func go(fatherPower: Double) {
         if position.isPlayerKilled() {
-            power = 0
+            power = -1
             return
         }
         if position.playerCoordinates == labyrinth.finishCoordinates {
@@ -71,7 +72,7 @@ class TreeCell {
         case .max:
             power = -1
         case .mini:
-            power = 1
+            power = 2
         case .chance:
             power = 0
         }
@@ -97,12 +98,16 @@ class TreeCell {
     }
     
     private func calculatePower() -> Double {
-//        var avarageDistanceToKill = 0.0
-//        for killerCoordinates in position.cleverKillerCoordinates {
-//            avarageDistanceToKill += 1/position.playerCoordinates.distanceTo(killerCoordinates)
-//        }
-//        avarageDistanceToKill /= Double(position.cleverKillerCoordinates.count)
-        return 1/Double(AStarManager.shared.getDistance(from: position.playerCoordinates, to: labyrinth.finishCoordinates))
+        if rootType == .max {
+            return 1/Double(AStarManager.shared.getDistance(from: position.playerCoordinates, to: labyrinth.finishCoordinates))
+        } else {
+            var avarageDistanceToKill = 0
+            for killerCoordinates in position.cleverKillerCoordinates {
+                avarageDistanceToKill += AStarManager.shared.getDistance(from: killerCoordinates, to: position.playerCoordinates)
+            }
+            avarageDistanceToKill /= position.cleverKillerCoordinates.count
+            return (1 - 1/Double(avarageDistanceToKill)) / Double(AStarManager.shared.getDistance(from: position.playerCoordinates, to: labyrinth.finishCoordinates))
+        }
     }
     
     private func findChildren() {
@@ -119,7 +124,7 @@ class TreeCell {
                     var newPosition = position
                     newPosition.playerCoordinates = newCoordinates
                     if !newPosition.isPlayerKilled() {
-                        children.append(TreeCell(type: type.nextType(), labyrinth: labyrinth, position: newPosition, directionChange: [direction], deep: currentDeep-1))
+                        children.append(TreeCell(type: type.nextType(), labyrinth: labyrinth, position: newPosition, directionChange: [direction], deep: currentDeep-1, rootType: rootType))
                     }
                 }
             }
@@ -133,7 +138,7 @@ class TreeCell {
                 }
                 var newPosition = position
                 newPosition.cleverKillerCoordinates = newCoordinates
-                children.append(TreeCell(type: type.nextType(), labyrinth: labyrinth, position: newPosition, directionChange: move, deep: currentDeep-1))
+                children.append(TreeCell(type: type.nextType(), labyrinth: labyrinth, position: newPosition, directionChange: move, deep: currentDeep-1, rootType: rootType))
             }
         case .chance:
             //stupid bot move
@@ -145,7 +150,7 @@ class TreeCell {
                 }
                 var newPosition = position
                 newPosition.stupidKillerCoordinates = newCoordinates
-                children.append(TreeCell(type: type.nextType(), labyrinth: labyrinth, position: newPosition, directionChange: move, deep: currentDeep-1))
+                children.append(TreeCell(type: type.nextType(), labyrinth: labyrinth, position: newPosition, directionChange: move, deep: currentDeep-1, rootType: rootType))
             }
         }
     }
@@ -161,7 +166,8 @@ class TreeCell {
                     && newCoordinates.x < labyrinth.matrix[0].count
                     && newCoordinates.y >= 0
                     && newCoordinates.y < labyrinth.matrix.count
-                    && labyrinth.matrix[newCoordinates.y][newCoordinates.x].patency != .wall {
+                    && labyrinth.matrix[newCoordinates.y][newCoordinates.x].patency != .wall
+                {
                     possibleDirections.append(direction)
                 }
             }

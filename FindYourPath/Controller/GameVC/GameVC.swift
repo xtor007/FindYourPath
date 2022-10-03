@@ -70,7 +70,11 @@ class GameVC: UIViewController {
     
     private func recomendMove() {
         let direction = model.getReccomendedMove()
-        moveButtons[direction.getIndex()].backgroundColor = .green
+        if model.gameStatus != .lose {
+            moveButtons[direction.getIndex()].backgroundColor = .green
+        } else {
+            print("LOSE")
+        }
     }
     
 }

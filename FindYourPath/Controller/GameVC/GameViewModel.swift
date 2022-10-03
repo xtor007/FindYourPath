@@ -62,7 +62,13 @@ class GameViewModel {
     }
     
     func getReccomendedMove() -> Direction {
-        return miniMaxManager.go(withType: .max, currentPosition: characterPosition)[0]
+        let result = miniMaxManager.go(withType: .max, currentPosition: characterPosition)
+        if result.isEmpty {
+            gameStatus = .lose
+            return .down
+        } else {
+            return result[0]
+        }
     }
     
     func isMovePossible(direction: Direction) -> Bool {
